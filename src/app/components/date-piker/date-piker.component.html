@@ -1,0 +1,19 @@
+<mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Reserva Hote;</mat-label>
+    <mat-date-range-input
+      [formGroup]="reservaHotel"
+      [rangePicker]="reservaPiker"
+      [comparisonStart]="reservaHotel.value.start"
+      [comparisonEnd]="reservaHotel.value.end">
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="reservaPiker"></mat-datepicker-toggle>
+    <!-- <mat-date-range-picker #reservaPiker></mat-date-range-picker> -->
+    <mat-date-range-picker #reservaPiker>
+        <mat-date-range-picker-actions>
+          <button mat-button matDateRangePickerCancel color="warn">Cancel</button>
+          <button mat-raised-button color="primary" matDateRangePickerApply>Guardar Seleccion</button>
+        </mat-date-range-picker-actions>
+      </mat-date-range-picker>
+  </mat-form-field>
